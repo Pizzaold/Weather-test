@@ -1,0 +1,48 @@
+.weather-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 16px;
+  overflow: hidden;
+  background: linear-gradient(135deg, #646cff20, #535bf220);
+  backdrop-filter: blur(10px);
+}
+
+.weather-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/cloudes.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: -1;
+}
+
+.weather-card h2 {
+  color: #646cff;
+  margin: 0 0 1rem 0;
+  font-size: 2em;
+  position: relative;
+}
+
+.weather-card p {
+  margin: 0.5rem 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+  position: relative;
+}
+
+.temperature {
+  font-size: 2.5em !important;
+  font-weight: bold;
+  color: #646cff;
+}
+
+.weather-type {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}

@@ -1,0 +1,24 @@
+.weather-list {
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.weather-item {
+  background: linear-gradient(135deg, #646cff20, #535bf220);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.weather-item h2 {
+  color: #646cff;
+  margin: 0 0 15px 0;
+  font-size: 2em;
+}
+
+.weather-item p {
+  margin: 0;
+  font-size: 1.1em;
+  opacity: 0.9;
+}

@@ -1,0 +1,32 @@
+.search-results {
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.city-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.city-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.city-item h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.5em;
+  color: #646cff;
+}
+
+.city-item p {
+  margin: 0;
+  opacity: 0.8;
+  font-size: 0.9em;
+} 
