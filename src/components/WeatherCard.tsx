@@ -10,7 +10,7 @@ const WeatherCard = ({city}: {city: City}) => {
   };
 
   useEffect(() => {
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city.name}`)
+    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city.name}&appid=${import.meta.env.API_KEY}`)
       .then((result) => {
         return result.json();
       })

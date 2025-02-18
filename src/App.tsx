@@ -5,10 +5,9 @@ import { SearchResults } from './components/SearchResults';
 import { WeatherList } from './components/WeatherList';
 import { City } from './types';
 import './App.css';
-import dotenv from 'dotenv';
-dotenv.config();
 
-if (process.env.NODE_ENV === 'development') {
+// Only create mock server in development or test environment
+if (import.meta.env.DEV || import.meta.env.MODE === 'test') {
   createMockServer();
 }
 
@@ -18,7 +17,7 @@ function App() {
   const [selected, setSelected] = useState<City | null>(null);
 
   const handleSearchButtonClick = async () => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${process.env.API_KEY}`)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${import.meta.env.API_KEY}`)
       .then((result) => result.json())
       .then((cities) => {
         setSearchResult(cities.map((city: any) => ({

@@ -1,4 +1,4 @@
-import { expect, test } from 'vitest';
+import { expect } from 'vitest';
 import { render, screen, waitFor, within, act } from '@testing-library/react';
 import App from "./App";
 import createMockServer from './createMockServer';
