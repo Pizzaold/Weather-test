@@ -1,5 +1,8 @@
 /// <reference types="cypress" />
-import { mount } from '@cypress/react18'
+import './commands';
+import { mount } from '@cypress/react18';
+import React from 'react';
+import '../../src/index.css';
 
 declare global {
   namespace Cypress {
@@ -9,4 +12,6 @@ declare global {
   }
 }
 
-Cypress.Commands.add('mount', mount) 
+Cypress.Commands.add('mount', mount);
+
+window.React = React; 
