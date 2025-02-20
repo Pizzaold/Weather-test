@@ -1,15 +1,17 @@
-import createMockServer from './createMockServer';
 import { useState } from 'react';
 import { SearchBar } from './components/SearchBar';
 import { SearchResults } from './components/SearchResults';
 import { WeatherList } from './components/WeatherList';
 import { City } from './types';
 import './App.css';
-import dotenv from 'dotenv';
-dotenv.config();
+import createMockServer from './createMockServer';
 
 if (process.env.NODE_ENV === 'development') {
-  createMockServer();
+  try {
+    createMockServer();
+  } catch (error) {
+    console.warn('Mock server already initialized: ', error);
+  }
 }
 
 function App() {
@@ -18,10 +20,10 @@ function App() {
   const [selected, setSelected] = useState<City | null>(null);
 
   const handleSearchButtonClick = async () => {
-    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${process.env.API_KEY}`)
+    fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${query}&limit=5&appid=${import.meta.env.VITE_API_KEY}`)
       .then((result) => result.json())
       .then((cities) => {
-        setSearchResult(cities.map((city: any) => ({
+        setSearchResult(cities.map((city: City) => ({
           name: city.name,
           country: city.country,
           lat: city.lat,

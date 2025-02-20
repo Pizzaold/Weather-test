@@ -7,11 +7,10 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest src/test/selenium/"
   },
   "dependencies": {
-    "@types/dotenv": "^8.2.3",
-    "dotenv": "^16.4.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -34,6 +33,9 @@
     "typescript": "~5.7.2",
     "typescript-eslint": "^8.22.0",
     "vite": "^6.1.0",
-    "vitest": "^3.0.5"
+    "vitest": "^3.0.5",
+    "selenium-webdriver": "^4.18.1",
+    "@types/selenium-webdriver": "^4.1.21",
+    "chromedriver": "^122.0.0"
   }
 }
